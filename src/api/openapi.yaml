@@ -17,3 +17,41 @@ paths:
             text/plain:
               schema:
                 type: string
+  /add:
+    post:
+      operationId: add
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddRequest'
+      responses:
+        '200':
+          description: Result response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddResponse'
+components:
+  schemas:
+    AddRequest:
+      type: object
+      required:
+        - a
+        - b
+      properties:
+        a:
+          type: integer
+          format: int64
+        b:
+          type: integer
+          format: int64
+    AddResponse:
+      type: object
+      required:
+        - result
+      properties:
+        result:
+          type: integer
+          format: int64
