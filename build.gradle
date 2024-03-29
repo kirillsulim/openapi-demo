@@ -1,11 +1,21 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
 plugins {
     id 'java'
-    id 'io.openapiprocessor.openapi-processor' version '2022.1'
+    id 'io.openapiprocessor.openapi-processor' version '2023.2'
 }
 
 dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.17.0'
     implementation 'org.springframework:spring-web:6.1.5'
+}
+
+repositories {
+    mavenCentral()
 }
 
 sourceSets {
@@ -27,3 +37,5 @@ openapiProcessor {
         parser "INTERNAL"
     }
 }
+
+compileJava.dependsOn('processSpring')
