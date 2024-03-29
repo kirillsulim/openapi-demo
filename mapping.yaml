@@ -1,0 +1,3 @@
+openapi-processor-mapping: v5
+options:
+  package-name: com.github.kirillsulim.demo

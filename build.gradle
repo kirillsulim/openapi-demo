@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+    id 'io.openapiprocessor.openapi-processor' version '2022.1'
+}
+
+openapiProcessor {
+    apiPath "${projectDir}/src/api/openapi.yaml"
+
+    spring {
+        processor 'io.openapiprocessor:openapi-processor-spring:2024.1'
+        targetDir "$projectDir/build/openapi"
+        mapping "$projectDir/mapping.yaml"
+        parser "INTERNAL"
+    }
+}
