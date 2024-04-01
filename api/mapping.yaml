@@ -2,3 +2,4 @@ openapi-processor-mapping: v5
 options:
   package-name: com.github.kirillsulim.demo
   model-type: record
+  format-code: true
